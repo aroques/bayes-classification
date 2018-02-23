@@ -1,4 +1,4 @@
-## Bayes Classification
+## Naive Bayes Classification
 
 ![Image of Bayes Theorem](http://www.saedsayad.com/images/Bayes_rule.png)
 
