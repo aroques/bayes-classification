@@ -1,11 +1,11 @@
 Tid,Home Owner,Marital Status,Annual Income,Defaulted Borrower
-1,Yes,Single,125000,No
-2,No,Married,100000,No
-3,No,Single,70000,No
-4,Yes,Married,120000,No
-5,No,Divorced,95000,Yes
-6,No,Married,60000,No
-7,Yes,Divorced,220000,No
-8,No,Single,85000,Yes
-9,No,Married,75000,No
-10,No,Single,90000,Yes
+1,1,Single,125000,0
+2,0,Married,100000,0
+3,0,Single,70000,0
+4,1,Married,120000,0
+5,0,Divorced,95000,1
+6,0,Married,60000,0
+7,1,Divorced,220000,0
+8,0,Single,85000,1
+9,0,Married,75000,0
+10,0,Single,90000,1

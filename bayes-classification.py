@@ -1,17 +1,24 @@
 
 from Dataset import Dataset
 
-
+# pass in a vector [categorical, continuous]
 
 
 def main():
     csv_file = 'test_set.csv'
-
-    dataset = Dataset(csv_file)
+    column_type = ['binary', 'categorical', 'continuous', 'binary']
+    dataset = Dataset(csv_file, column_type)
 
     print(dataset.columns)
     print(dataset.rows)
     print(dataset.cls)
+
+    print(dataset.columns_that_are('continuous'))
+
+    for column in dataset.columns_that_are('binary'):
+        print(list(zip(column, dataset.cls)))
+
+
 
     # classes = set(dataset.columns['Defaulted Borrower'])
 
