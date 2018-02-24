@@ -15,10 +15,23 @@ def main():
 
     print(dataset.columns_that_are('continuous'))
 
+    column_probability = []  # Holds P (A | C) and P (A | not C) tuple for each column A
+
     for column in dataset.columns_that_are('binary'):
-        print(list(zip(column, dataset.cls)))
+        true_count = 0
+        for attr_value, class_value in zip(column, dataset.cls):
+            if class_value:
+                true_councot += 1
+        prob_true = true_count / len(column)
+        prob_false = 1 - prob_true
+        prob_tuple = (prob_true, prob_false)
+        column_probability.append(prob_tuple)
 
+    for column in dataset.columns_that_are('categorical'):
+        categories = set(column)
+        print(categories)
 
+    print(column_probability)
 
     # classes = set(dataset.columns['Defaulted Borrower'])
 

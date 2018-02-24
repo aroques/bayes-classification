@@ -1,6 +1,4 @@
 import csv
-from collections import defaultdict
-
 
 
 class Dataset:
@@ -45,5 +43,3 @@ class Dataset:
     def get_columns(self):
         """Returns the dataset's columns"""
         return list(zip(*self.rows))
-
-
