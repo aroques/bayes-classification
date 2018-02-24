@@ -43,3 +43,4 @@ class Dataset:
     def get_columns(self):
         """Returns the dataset's columns"""
         return list(zip(*self.rows))
+
