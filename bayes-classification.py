@@ -21,7 +21,7 @@ def main():
         true_count = 0
         for attr_value, class_value in zip(column, dataset.cls):
             if class_value:
-                true_councot += 1
+                true_count += 1
         prob_true = true_count / len(column)
         prob_false = 1 - prob_true
         prob_tuple = (prob_true, prob_false)
@@ -29,8 +29,11 @@ def main():
 
     for column in dataset.columns_that_are('categorical'):
         categories = set(column)
-        print(categories)
-
+        prob_true = dict.fromkeys(categories, 0)
+        for attr_value, class_value in zip(column, dataset.cls):
+            if class_value:
+                prob_true[attr_value] += 1
+        print(prob_true)
     print(column_probability)
 
     # classes = set(dataset.columns['Defaulted Borrower'])
