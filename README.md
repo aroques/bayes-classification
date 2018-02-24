@@ -11,5 +11,5 @@ This implementation assumes the class we are trying to predict is binary and tha
 To run this program:
 
 ```
-python3.6 bayes-classification.py
+python3.6 naive-bayes.py
 ```
