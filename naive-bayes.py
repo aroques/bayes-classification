@@ -59,7 +59,7 @@ def main():
                 actual_value = 'No'
             print('Actual value: {}'.format(actual_value))
         else:
-            print('Test vector so no actual value')
+            print('Test vector, so no actual value')
 
         print()
 
@@ -98,9 +98,8 @@ def get_binary_column_prob(dataset):
     prob_not_a_given_false = 1 - prob_not_a_given_true
     prob[False] = (prob_not_a_given_true, prob_not_a_given_false)
 
-    print(prob)
-
     return prob
+
 
 def get_categorical_column_prob(dataset):
     """Returns probability tuples for each category in categorical column"""
