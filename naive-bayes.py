@@ -30,6 +30,10 @@ def main():
     true_idx = 0
     false_idx = 1
 
+    num_values = len(dataset.cls)
+    prior_prob_true = len(list(filter(lambda x: not x, dataset.cls))) / num_values
+    prior_prob_false = len(list(filter(lambda x: x, dataset.cls))) / num_values
+
     for i, row in enumerate(test_set):
 
         p1 = binary_column_prob[row[binary_column_idx]]
@@ -41,8 +45,8 @@ def main():
         p3 = (prob_true, prob_false)
 
         # Now predict
-        prob_true = p1[true_idx] * p2[true_idx] * p3[true_idx]
-        prob_false = p1[false_idx] * p2[false_idx] * p3[false_idx]
+        prob_true = p1[true_idx] * p2[true_idx] * p3[true_idx] * prior_prob_true
+        prob_false = p1[false_idx] * p2[false_idx] * p3[false_idx] * prior_prob_false
 
         test_vector = (row[binary_column_idx], row[categorical_column_idx], row[continuous_column_idx])
         print('Predicting {}'.format(test_vector))
